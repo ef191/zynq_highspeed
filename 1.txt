@@ -1,0 +1,18 @@
+It's understandable that you're seeing 100Mbps speed on your Z-Turn board's Ethernet when documents suggest 1000Mbps is supported. Here's a breakdown of possible reasons and how to troubleshoot: 
+1. Hardware:
+Cable Quality: Ensure you're using a Cat5e or Cat6 Ethernet cable, as these are required for gigabit speeds.
+Network Switch/Router: The device the Z-Turn board is connected to must also support 1000Mbps and be configured for it. 
+2. Software/Configuration:
+Driver Issues: The Ethernet driver on your Z-Turn board might not be properly configured for 1000Mbps operation.
+Network Settings: Double-check the network settings on the board and on the connected device. Ensure they are set to auto-negotiate or explicitly set to 1000Mbps Full Duplex.
+Linux Configuration: If you're running Linux (which the Z-Turn board is capable of), you may need to configure the Ethernet driver through the kernel or a specific network management tool to achieve gigabit speeds.
+PHY Register Check: As suggested in one search result, you can read the physical layer (PHY) registers through JTAG to see what speed the Ethernet PHY is reporting. 
+3. Development Environment:
+Vivado Project: If you're developing a custom design using Vivado, verify that the Ethernet IP core in your project is correctly configured for 1000Mbps operation.
+Software Development Kit (SDK): Check the SDK or the software you are using to interact with the Ethernet peripheral for any settings that might limit the speed. 
+Troubleshooting Steps:
+Test with a different cable and network switch: This helps rule out issues with external hardware.
+Consult the Z-Turn board documentation and support resources: MYIR Tech (the board manufacturer) or other relevant forums might have specific guides or troubleshooting tips for enabling 1000Mbps Ethernet on the Z-Turn board.
+Check the Ethernet driver settings: Determine if the driver is installed correctly and if there are any options to force or negotiate a higher speed.
+If running Linux, check system logs for Ethernet-related messages: This could provide clues about why the speed is limited. 
+By systematically addressing these potential causes, you should be able to identify and resolve the issue preventing your Z-Turn board from reaching its full 1000Mbps Ethernet potential.
